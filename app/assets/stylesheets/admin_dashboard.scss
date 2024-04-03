@@ -11,11 +11,22 @@
   .cards {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
     .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin: 0em 1em;
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+
+        .card-title {
+          font-weight: 700;
+        }
+      }
     }
   }
 }

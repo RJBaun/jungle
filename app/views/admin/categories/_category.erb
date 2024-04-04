@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <h4><%= category.name %></h4>
+    <br>
+  </td>
+  <td>
+    <% Product.where(category_id: category.id).each do |product| %>
+      <p> - <%= product.name %> (<%=humanized_money_with_symbol product.price_cents / 100 %>)</p> 
+    <% end %> 
+  </td>
+  <td>
+    <% Product.where(category_id: category.id).each do |product| %>
+      <p> - <%= product.quantity %></p>
+    <% end %>
+  </td>
+</tr>

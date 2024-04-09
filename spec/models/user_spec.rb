@@ -53,4 +53,41 @@ RSpec.describe User, type: :model do
       expect(user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
     end
   end
+
+  describe "authenticate_with_credentials" do
+    it "returns the user when authenticated with correct credentials" do
+      user = User.new(first_name: "Vinny", last_name: "Paws", email: "test@example.com", password: "test123", password_confirmation: "test123")
+      user.save
+      authenticated_user = User.authenticate_with_credentials('test@example.com', "test123")
+      expect(authenticated_user).to eq(user)
+    end
+
+    it "returns nil when email does nto exist" do
+      user = User.new(first_name: "Vinny", last_name: "Paws", email: "test@example.com", password: "test123", password_confirmation: "test123")
+      user.save
+      authenticated_user = User.authenticate_with_credentials('fake', "test123")
+      expect(authenticated_user).to be_nil
+    end
+
+    it "returns nil when password is incorrect" do
+      user = User.new(first_name: "Vinny", last_name: "Paws", email: "test@example.com", password: "test123", password_confirmation: "test123")
+      user.save
+      authenticated_user = User.authenticate_with_credentials('test@example.com', 'test234')
+      expect(authenticated_user).to be_nil
+    end
+
+    it "ignores whitespace" do
+      user = User.new(first_name: "Vinny", last_name: "Paws", email: "test@example.com", password: "test123", password_confirmation: "test123")
+      user.save
+      authenticated_user = User.authenticate_with_credentials('  test@example.com  ', "test123")
+      expect(authenticated_user).to eq(user)
+    end
+
+    it "is is not case sensative for email" do
+      user = User.new(first_name: "Vinny", last_name: "Paws", email: "test@example.com", password: "test123", password_confirmation: "test123")
+      user.save
+      authenticated_user = User.authenticate_with_credentials('TEST@example.com', "test123")
+      expect(authenticated_user).to eq(user)
+    end
+  end
 end

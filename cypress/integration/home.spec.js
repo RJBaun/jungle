@@ -5,7 +5,7 @@ describe('jungle', () => {
     cy.visit('localhost:3000/')
   })
 
-  it("There is 2 products on the page", () => {
+  it("Has 2 products on the home page", () => {
     cy.get(".products article").should("have.length", 2);
   });
 })

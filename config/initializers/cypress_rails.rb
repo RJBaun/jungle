@@ -23,7 +23,19 @@ CypressRails.hooks.before_server_start do
     quantity: 18,
     price: 24.99
   })
-  DatabaseCleaner.clean
+  
+  User.create!(
+    first_name: 'Vinny',
+    last_name: 'Paws',
+    email: 'vince@example.com',
+    password_digest: BCrypt::Password.create('password123')
+  )
+
+  Order.create!(
+    total_cents: 24.99,
+    stripe_charge_id: "1234",
+    email: User.first.email
+  )
 end
 
 CypressRails.hooks.after_transaction_start do

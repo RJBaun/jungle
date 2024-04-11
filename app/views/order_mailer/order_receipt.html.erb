@@ -5,10 +5,18 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thank you for your order, <%= @user.name %>!</h1>
+    <h1>Thank you for your order, <%= @user.first_name %>!</h1>
     <p>
-      Your order has been placed successfully.
+      Order #<%= @order.id %> Details: 
+      <ul>
+        <% @order.line_items.each do |item| %>
+          <li> <%= item.product.name %>: &nbsp$<%= item.product.price_cents / 100 %> </li>
+        <% end %>
+      </ul>
+      <p> Total Cost: $<%= @order.total_cents / 100 %></p>
+      <p> Transaction ID: <%= @order.stripe_charge_id %></p>
     </p>
-    <p>Have a great day!</p>
+    </br>
+    <h2>From your team at Jungle, have a great day!</h2>
   </body>
 </html>

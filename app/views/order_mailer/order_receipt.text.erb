@@ -1,6 +1,13 @@
-Thank you for your order, <%= @user.name %>!
+Thank you for your order, <%= @user.first_name %>!
 ===============================================
 
-Your order has been placed successfully.
+Order #<%= @order.id %> Details:
+<% @order.line_items.each do |item| %>
+  <%= item.product.name %>:  <%= item.product.price_cents / 100 %> 
+<% end %>
 
-Have a great day!
+Total Cost: $<%= @order.total_cents / 100 %>
+Transaction ID: <%= @order.stripe_charge_id %>
+
+From your team at Jungle, have a great day!
+

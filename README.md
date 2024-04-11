@@ -27,4 +27,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Cypress
 
 ## Screenshots
-
+!['Main Product Page'](https://github.com/RJBaun/jungle/blob/master/public/images/Screenshot%202024-04-10%20at%209.50.12%E2%80%AFPM.png?raw=true)
+!['Cart With Products'](https://github.com/RJBaun/jungle/blob/master/public/images/Screenshot%202024-04-10%20at%209.52.37%E2%80%AFPM.png?raw=true)
+!['Order Confirmation'](https://github.com/RJBaun/jungle/blob/master/public/images/Screenshot%202024-04-10%20at%209.56.06%E2%80%AFPM.png?raw=true)

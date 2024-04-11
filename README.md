@@ -1,7 +1,8 @@
 # Jungle
 
-A mini e-commerce application that allows users to register/sign in, browse products by category, add items to their cart ,and check out. Following checkout, an email is sent with order details. 
+A mini e-commerce application that allows users to register/sign in, browse products by category, add items to their cart, and check out. Following checkout, an email is sent with order details. 
 
+Example emails can be found at:
 http://localhost:3000/rails/mailers/order/order_receipt
 
 ## Setup

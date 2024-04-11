@@ -29,5 +29,10 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 !['Main Product Page'](https://github.com/RJBaun/jungle/blob/master/public/images/Screenshot%202024-04-10%20at%209.50.12%E2%80%AFPM.png?raw=true)
+The main product page, filtered by 'Evergreens'
+
 !['Cart With Products'](https://github.com/RJBaun/jungle/blob/master/public/images/Screenshot%202024-04-10%20at%209.52.37%E2%80%AFPM.png?raw=true)
+A cart containing two products
+
 !['Order Confirmation'](https://github.com/RJBaun/jungle/blob/master/public/images/Screenshot%202024-04-10%20at%209.56.06%E2%80%AFPM.png?raw=true)
+Order onfirmation screen
